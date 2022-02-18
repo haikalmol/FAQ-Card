@@ -1,0 +1,152 @@
+body,
+html,
+ul,
+li,
+div,
+p,
+span,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: hsl(240, 6%, 50%);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.holder {
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+}
+
+.img-container {
+  background: url("images/illustration-woman-online-desktop.svg") no-repeat 100% 45%, url("images/bg-pattern-desktop.svg") no-repeat 100% 72%;
+  position: relative;
+  width: 410px;
+}
+
+.img-box {
+  left: -24%;
+  position: absolute;
+  top: 40%;
+}
+
+.img-woman {
+  position: absolute;
+  left: -28%;
+  top: 11%;
+}
+
+.faq-container {
+  max-width: 430px;
+  padding: 58px;
+}
+
+h1 {
+  color: hsl(237, 12%, 33%);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input:checked {
+  background: yellow;
+}
+
+.accordion {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  padding: 15px 0;
+}
+
+.accordion label {
+  color: hsl(237, 12%, 33%);
+  display: block;
+  font-size: 14px;
+  margin: 5px 0;
+  position: relative;
+}
+
+.accordion label::after {
+  content: url("images/icon-arrow-down.svg");
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.accordion .accordion-content {
+  font-size: 12px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+
+.accordion input:checked ~ .accordion-content {
+  max-height: 100vh;
+}
+
+.accordion input:checked ~ label::after {
+  content: url("images/icon-arrow-down.svg");
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 600px) {
+  .holder {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 75%;
+    margin-top: 3em;
+    position: relative;
+  }
+
+  .img-container {
+    background: url("images/illustration-woman-online-mobile.svg") center no-repeat, url("images/bg-pattern-desktop.svg") no-repeat 52% 50%;
+    background-size: 92%, 92%;
+    height: 75%;
+    left: 4em;
+    margin: 0 auto;
+    top: -18rem;
+    position: absolute;
+    width: 75%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .img-box {
+    display: none;
+  }
+
+  .faq-container {
+    position: relative;
+    top: 6em;
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .faq-container {
+    padding: 20px;
+    width: 300px;
+  }
+
+  .accordion {
+    margin: 0 10px;
+  }
+
+  .img-container {
+    left: 3rem;
+  }
+}
